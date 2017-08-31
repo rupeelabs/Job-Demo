@@ -9,8 +9,8 @@ Domain event
 
 ```
 $ docker run --rm -ti -v $(pwd):/de/ \
-registry.cn-hangzhou.aliyuncs.com/gaodun-dev/php-dev:latest \ 
-php /de/vendor/fatrellis/mqk/bin/mqk run --config /de/config.php
+registry.cn-hangzhou.aliyuncs.com/gaodun-dev/php-dev:latest \
+php /de/vendor/fatrellis/mqk/bin/mqk run --config /de/config.php -vvv
 ```
 
 ## 运行生产者
