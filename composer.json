@@ -1,0 +1,50 @@
+{
+    "require": {
+        "fatrellis/mqk": "dev-master",
+        "php/logging": "*",
+        "php\/http-foundation": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "DomainEvent\\": "src/DomainEvent/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "ssh:\/\/git@gitlab.gaodun.com:22122\/gaodun\/gdframework.git"
+        },
+        {
+            "type": "git",
+            "url": "ssh:\/\/git@gitlab.gaodun.com:22122\/php\/http-foundation.git"
+        },
+        {
+            "type": "git",
+            "url": "ssh:\/\/git@gitlab.gaodun.com:22122\/php\/illuminate-support-php.git"
+        },
+        {
+            "type": "git",
+            "url": "ssh:\/\/git@gitlab.gaodun.com:22122\/php\/illuminate-config-php.git"
+        },
+        {
+            "type": "git",
+            "url": "ssh:\/\/git@gitlab.gaodun.com:22122\/php\/envdetect.git"
+        },
+        {
+            "type": "git",
+            "url": "ssh:\/\/git@gitlab.gaodun.com:22122\/Behavior\/consul.git"
+        },
+        {
+            "type": "git",
+            "url": "ssh:\/\/git@gitlab.gaodun.com:22122\/php\/conf.git"
+        },
+        {
+            "type": "git",
+            "url": "ssh:\/\/git@gitlab.gaodun.com:22122\/php\/logging.git"
+        },
+        {
+            "type": "git",
+            "url": "ssh:\/\/git@gitlab.gaodun.com:22122\/weicongju\/mqk.git"
+        }
+    ]
+}
