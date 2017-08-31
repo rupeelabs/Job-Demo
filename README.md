@@ -3,9 +3,17 @@ Domain event
 
 这个仓库是用来演示如何使用MQK进行监听领域事件。
 
+## 安装
+
+```
+$ git clone http://gitlab.gaodun.com/weicongju/domain-event
+$ cd domain-event
+$ composer install -vvv
+```
+
 ## 运行消费者
 
-接收消息总线的事件并处理。
+进入到domain-event的目录启动下面的命令，启动mqk开始处理。
 
 ```
 $ docker run --rm -ti -v $(pwd):/de/ \
