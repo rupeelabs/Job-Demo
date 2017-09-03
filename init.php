@@ -1,6 +1,8 @@
 <?php
 use DomainEvent\ResourceCreatedEvent;
 use Logging\LoggingFactory;
+use Gaodun\Event\ExamSyllabus\ExamSyllabusUpdateEvent;
+use Gaodun\Event\ExamSyllabus\ExamSyllabusEventObject;
 
 $_SERVER['HTTP_HOST'] = 'domain-event';
 
@@ -15,7 +17,19 @@ $logger = LoggingFactory::shared()->getLogger("DomainEvent");
 // 上面都是配置基本信息
 
 // 关键是这里的时间监听
-K::addListener(ResourceCreatedEvent::NAME, function($event) use ($logger) {
-    echo (new \HttpFoundation\RequestID())->id() . "\n";
-    $logger->debug("Resource did create");
-});
+
+//K::addListener(ExamSyllabusUpdateEvent::NAME, function($event) use ($conf) {
+//    var_dump($conf->get('public.mysql.db.host'));exit;
+//});
+
+K::addListener(
+    ExamSyllabusUpdateEvent::NAME, [
+        new \App\Listener\ExamSyllabusUpdateListener(),
+        'handle'
+    ]
+);
+
+//K::addListener(ResourceCreatedEvent::NAME, function($event) use ($logger) {
+//    echo (new \HttpFoundation\RequestID())->id() . "\n";
+//    $logger->debug("Resource did create {$event->id}");
+//});

@@ -1,0 +1,26 @@
+{
+	"name": "ad7six/dsn",
+	"type": "library",
+	"description": "A utility for parsing and generating service DSNs",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Andy Dawson",
+			"email": "andydawson76@gmail.com",
+			"homepage": "http://ad7six.com",
+			"role": "Maintainer"
+		}
+	],
+	"require": {
+		"php": ">=5.4.0"
+	},
+	"suggest": {
+		"josegonzalez/dotenv": "0.1.*"
+	},
+	"autoload": {
+		"psr-4": {
+			"AD7six\\Dsn\\": "src",
+			"AD7six\\Dsn\\Test\\": "tests"
+		}
+	}
+}

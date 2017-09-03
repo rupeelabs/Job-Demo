@@ -2,11 +2,14 @@
     "require": {
         "fatrellis/mqk": "dev-master",
         "php/logging": "*",
-        "php\/http-foundation": "*"
+        "php\/http-foundation": "*",
+        "catfan/Medoo": "^1.4"
     },
     "autoload": {
         "psr-4": {
-            "DomainEvent\\": "src/DomainEvent/"
+            "DomainEvent\\": "src/DomainEvent/",
+            "Gaodun\\Event\\": "../../Event/src",
+            "App\\": "./App"
         }
     },
     "repositories": [

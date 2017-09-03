@@ -2,6 +2,7 @@
 
 include "vendor/autoload.php";
 use DomainEvent\ResourceCreatedEvent;
+use Gaodun\Event\ExamSyllabusUpdateEvent;
 
 // 配置高顿的基础设施
 $_SERVER['HTTP_HOST'] = 'domain-event';
@@ -24,4 +25,4 @@ $handler = $logger->getHandlers()[0];
 // 使用高顿的graylog 的日志处理器 END
 
 // 派发事件
-K::dispatch(new ResourceCreatedEvent(1));
+K::dispatch(new ExamSyllabusUpdateEvent(1));

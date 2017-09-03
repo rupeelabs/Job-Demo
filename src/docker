@@ -1,0 +1,3 @@
+docker run --rm -ti -v /mkq:/de/ -v /Event:/Event \
+registry.cn-hangzhou.aliyuncs.com/gaodun-dev/php-dev:latest \
+php /de/vendor/fatrellis/mqk/bin/mqk run --config /de/config.php -vvv

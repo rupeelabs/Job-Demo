@@ -1,6 +1,6 @@
 <?php
 return array(
     "init_script" => "/de/init.php",
-    "workers" => 1,
+    "workers" => 5,
     "dsn" => "redis://:gaodun.com@dev.redis.gaodunwangxiao.com"
 );

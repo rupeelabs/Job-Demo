@@ -1,0 +1,21 @@
+language: php
+
+php:
+  - 5.4
+  - 5.5
+
+before_script:
+  - composer self-update
+  - composer dump-autoload
+  - pear install --alldeps PHP_CodeSniffer
+  - phpenv rehash
+
+script:
+  - phpunit --coverage-text --coverage-clover build/logs/clover.xml
+  - phpcs --standard=psr2 src/
+
+after_success:
+  - "composer require --dev satooshi/php-coveralls:dev-master && php vendor/bin/coveralls -v"
+
+notifications:
+  email: false
