@@ -9,11 +9,12 @@ namespace App\Listener;
 
 
 use App\Repository\CourseDAO;
+use App\Service\EpCourseStatisticsService;
 use Symfony\Component\EventDispatcher\Event;
 
 class ExamSyllabusUpdateListener
 {
-    public $courseDAO;
+    public $epCourseStatisticsService;
 
     public function test(Event $event)
     {
@@ -22,7 +23,7 @@ class ExamSyllabusUpdateListener
 
     public function __construct()
     {
-        $this->courseDAO = new CourseDAO();
+        $this->epCourseStatisticsService = new EpCourseStatisticsService();
     }
 
     public function handle(Event $event)
@@ -32,16 +33,13 @@ class ExamSyllabusUpdateListener
         $id = $object->id;
         $contentId = $object->contentId;
         $level = $object->level;
-        $courses = $this->courseDAO->findCoursesByExamSyllabusId($id);
-        var_dump($courses);
-        return ;
+
         if ($level == 3) {
-            $courses = $this->courseDAO->findCoursesByExamSyllabusId($id);
             switch ($action) {
                 case 'del' :
-                    $a = 1;
+                    $this->epCourseStatisticsService->decreaseKnowledgeNums();
                 case 'attach' :
-
+                    $this->epCourseStatisticsService->increaseKnowledgeNums();
             }
         }
     }

@@ -11,7 +11,7 @@ error_reporting(0);
 use App\Util\DbFactory;
 
 try {
-    $rs = DbFactory::shared()->query("SELECT * FROM gaodun.gd_course WHERE id=2977");
+    $rs = DbFactory::shared()->query("INSERT INTO epiphany.epi_course_statistics(course_id,knowledge_sum) VALUES(2977, 2)");
     var_dump($rs);exit;
 } catch (\Exception $e) {
     echo $e->getMessage();
