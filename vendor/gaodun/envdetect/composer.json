@@ -1,0 +1,22 @@
+{
+    "name": "gaodun/envdetect",
+    "type": "library",
+    "authors": [
+        {
+            "name": "weicongju",
+            "email": "weicongju@gaodun.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^5.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gaodun\\": [
+                "src/Gaodun",
+                "test/Gaodun"
+            ]
+        }
+    }
+}
