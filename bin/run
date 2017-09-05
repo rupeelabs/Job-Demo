@@ -1,0 +1,19 @@
+#!/usr/bin/env php
+<?php
+/**
+ * 定时任务启动脚本
+ * 使用方法：
+ * run [类名]
+ * sample: run KnowledgeJob
+ */
+error_reporting(E_ERROR);
+require_once '../vendor/autoload.php';
+
+$class = 'App\\Job\\'.$argv[1];
+if (!class_exists($class)) {
+    throw new \Exception("{$class} class not found!");
+}
+
+$job = new $class();
+$job->run();
+echo 'Success';

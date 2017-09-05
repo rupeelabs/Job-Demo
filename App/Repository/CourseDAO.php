@@ -17,4 +17,16 @@ class CourseDAO
         $result = DbFactory::shared()->query($sql);
         return $result;
     }
+
+    /**
+     * 根据网课类型查找课程列表
+     * @param $type 3为ep课程
+     * @return mixed
+     */
+    public function findCoursesByType($type)
+    {
+        $sql = "SELECT * FROM gaodun.gd_course WHERE istasks={$type}";
+        $result= DbFactory::shared()->query($sql);
+        return $result;
+    }
 }

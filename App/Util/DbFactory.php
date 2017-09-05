@@ -22,7 +22,9 @@ class DbFactory
 
     public function connect()
     {
-        $conf = \Conf\Conf::instance();
+        \Gaodun\EnvDetect\Env::setEnv(\Gaodun\EnvDetect\Env::DEV);
+        $factory = new \Conf\ConfFactory();
+        $conf = $factory->create("domain-event");
         $this->connection = new Medoo([
             'database_type' => 'mysql',
             'database_name' => 'gaodun',
