@@ -1,0 +1,16 @@
+#!/usr/bin/env php
+<?php
+
+$autoloadPath = [__DIR__ . "/../../../autoload.php", __DIR__ . "/../vendor/autoload.php"];
+
+foreach ($autoloadPath as $path) {
+    if (file_exists($path)) {
+        include $path;
+        break;
+    }
+}
+
+use \MQK\MQKApplication;
+$app = new MQKApplication();
+$app->run();
+
