@@ -11,6 +11,7 @@ namespace App\Job;
 use App\Repository\CourseDAO;
 use App\Repository\EpCourseStatisticsDAO;
 use App\Repository\KnowledgeSyllabusDAO;
+use App\Util\SentryNotify;
 
 class KnowledgeJob extends AbstractJob
 {
@@ -42,7 +43,7 @@ class KnowledgeJob extends AbstractJob
                 $this->epCourseStatisticsDAO->insert($course['id'], $knowledgeNums);
             } else {
                 if ($courseStatistics['knowledge_nums'] !== $knowledgeNums) {
-                    //TODO sentry通知
+                    SentryNotify::notify('知识点数量异常', $courseStatistics);
                 }
                 $this->epCourseStatisticsDAO
                     ->updateKnowledgeNumsByCourseId($course['id'], $knowledgeNums);

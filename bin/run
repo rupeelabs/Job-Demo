@@ -9,6 +9,7 @@
 error_reporting(E_ERROR);
 require_once '../vendor/autoload.php';
 
+$client = (new Raven_Client("http://84942ae0b9d54d88b7b72f8e4df4a98d:74f0c425ac7949868bb2b36dcf2388cc@sentry.gaodunwangxiao.com/20"))->install();
 $class = 'App\\Job\\'.$argv[1];
 if (!class_exists($class)) {
     throw new \Exception("{$class} class not found!");

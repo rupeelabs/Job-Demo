@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Raven_' => array($vendorDir . '/sentry/sentry/lib'),
     'Doctrine\\Common\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib'),
     '' => array($vendorDir . '/fatrellis/mqk/src'),
 );

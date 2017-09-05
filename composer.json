@@ -4,7 +4,8 @@
         "php/logging": "*",
         "php\/http-foundation": "*",
         "catfan/Medoo": "^1.4",
-        "gaodun/event": "dev-master"
+        "gaodun/event": "dev-master",
+        "sentry/sentry": "^1.7"
     },
     "autoload": {
         "psr-4": {
