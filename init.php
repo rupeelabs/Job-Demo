@@ -9,7 +9,9 @@ $_SERVER['HTTP_HOST'] = 'domain-event';
 
 \Gaodun\EnvDetect\Env::setEnv(\Gaodun\EnvDetect\Env::DEV);
 $logger = \Logging\LoggingFactory::shared()->getLogger(__CLASS__);
-$conf = \Conf\Conf::instance();
+$factory = new \Conf\ConfFactory();
+$conf = $factory->create("domain-event");
+//$conf = \Conf\Conf::instance();
 $handler = $logger->getHandlers()[0];
 \MQK\LoggerFactory::shared()->pushHandler($handler);
 
