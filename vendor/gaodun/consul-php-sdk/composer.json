@@ -1,0 +1,38 @@
+{
+    "name": "gaodun/consul-php-sdk",
+    "description": "SDK to talk with consul.io API",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Grégoire Pineau",
+            "email": "lyrixx@lyrixx.info"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.0",
+        "psr/log": "~1.0",
+        "gaodun/envdetect": "0.0.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "SensioLabs\\Consul\\": [
+                "Consul",
+                "test/Consul"
+            ]
+        }
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "ssh://git@gitlab.gaodun.com:22122/php/envdetect.git"
+        }
+    ],
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0-dev"
+        }
+    }
+}
