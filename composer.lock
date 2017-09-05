@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a4055424a4393d5b33902fb586687889",
-    "content-hash": "ec0d8ceb2cf13fd04bf32dcca5bc88aa",
+    "hash": "f7e5dafadcafe11cfbd722b07c4a52ca",
+    "content-hash": "ef7d3d65cff06d880b5dbf44fb55ac96",
     "packages": [
         {
             "name": "ad7six/dsn",
@@ -287,6 +287,29 @@
                 }
             ],
             "time": "2017-07-19 07:27:17"
+        },
+        {
+            "name": "gaodun/event",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "ssh://git@gitlab.gaodun.com:22122/php/domain-event.git",
+                "reference": "f7053d5ce688457478f73e7cb7710578554aa60e"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Gaodun\\Event\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Eric.Wang",
+                    "email": "eric.wang@gaodun.com"
+                }
+            ],
+            "description": "Domain Event",
+            "time": "2017-09-05 03:28:19"
         },
         {
             "name": "graylog2/gelf-php",
@@ -1517,9 +1540,10 @@
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
-        "fatrellis/mqk": 20
+        "fatrellis/mqk": 20,
+        "gaodun/event": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

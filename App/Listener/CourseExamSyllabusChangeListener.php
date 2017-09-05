@@ -12,7 +12,7 @@ use App\Repository\CourseDAO;
 use App\Service\EpCourseStatisticsService;
 use Symfony\Component\EventDispatcher\Event;
 
-class ExamSyllabusUpdateListener
+class CourseExamSyllabusChangeListener
 {
     public $epCourseStatisticsService;
 
@@ -31,16 +31,10 @@ class ExamSyllabusUpdateListener
         $object = $event->getObject();
         $action = $object->action;
         $id = $object->id;
-        $contentId = $object->contentId;
-        $level = $object->level;
+        $courseId = $object->courseId;
+        $knowledgeNums = $object->knowledgeNums;
 
-        if ($level == 3) {
-            switch ($action) {
-                case 'del' :
-                    $this->epCourseStatisticsService->decreaseKnowledgeNums($id);
-                case 'attach' :
-                    $this->epCourseStatisticsService->increaseKnowledgeNums($id);
-            }
-        }
+        $this->epCourseStatisticsService
+            ->updateKnowledgeNumsByCourseId($courseId, $knowledgeNums);
     }
 }

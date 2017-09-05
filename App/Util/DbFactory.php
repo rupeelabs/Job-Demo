@@ -22,31 +22,29 @@ class DbFactory
 
     public function connect()
     {
-        //$conf = \Conf\Conf::instance();
-        //echo $conf->get('public.mysql.db.host');exit;
-//        echo $conf->get('public.mysql.db.type');
-//        echo  $conf->get('ep.mysql.password');
-//        echo $conf->get('public.mysql.db.port');
-//        exit;
-        try {
-            $this->connection = new Medoo([
-                'database_type' => 'mysql',
-                'database_name' => 'gaodun',
-                'server' => 'dev.mysql.gaodunwangxiao.com',
-                'username' => 'gdtest',
-                'password' => 'gdmysql_221',
-                'charset' => 'utf-8',
-                'port' => 3306,
-            ]);
-        } catch (\Exception $e) {
-            echo $e->getMessage();
-            return;
+        $conf = \Conf\Conf::instance();
+        $this->connection = new Medoo([
+            'database_type' => 'mysql',
+            'database_name' => 'gaodun',
+            'server' => $conf->get('public.mysql.db.host'),
+            'username' => $conf->get('ep.mysql.user'),
+            'password' => $conf->get('ep.mysql.password'),
+            'charset' => 'utf-8',
+            'port' => $conf->get('public.mysql.db.port'),
+        ]);
+        if (is_null($this->connection)) {
+            throw new \Exception('Can not connect to Mysql');
         }
     }
 
     public function query($sql)
     {
          return $this->connection->query($sql)->fetchAll();
+    }
+
+    public function insert($table, $data)
+    {
+        return $this->connection->insert($table, $data);
     }
 
     public static function shared()

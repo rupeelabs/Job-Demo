@@ -1563,5 +1563,30 @@
             "sql",
             "sqlite"
         ]
+    },
+    {
+        "name": "gaodun/event",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@gitlab.gaodun.com:22122/php/domain-event.git",
+            "reference": "f7053d5ce688457478f73e7cb7710578554aa60e"
+        },
+        "time": "2017-09-05 03:28:19",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Gaodun\\Event\\": "src/"
+            }
+        },
+        "authors": [
+            {
+                "name": "Eric.Wang",
+                "email": "eric.wang@gaodun.com"
+            }
+        ],
+        "description": "Domain Event"
     }
 ]

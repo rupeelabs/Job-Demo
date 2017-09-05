@@ -3,6 +3,7 @@ use DomainEvent\ResourceCreatedEvent;
 use Logging\LoggingFactory;
 use Gaodun\Event\ExamSyllabus\ExamSyllabusUpdateEvent;
 use Gaodun\Event\ExamSyllabus\ExamSyllabusEventObject;
+use Gaodun\Event\ExamSyllabus\CourseExamSyllabusChangeEvent;
 
 $_SERVER['HTTP_HOST'] = 'domain-event';
 
@@ -13,6 +14,7 @@ $handler = $logger->getHandlers()[0];
 \MQK\LoggerFactory::shared()->pushHandler($handler);
 
 $logger = LoggingFactory::shared()->getLogger("DomainEvent");
+
 
 // 上面都是配置基本信息
 
@@ -25,6 +27,13 @@ $logger = LoggingFactory::shared()->getLogger("DomainEvent");
 K::addListener(
     ExamSyllabusUpdateEvent::NAME, [
         new \App\Listener\ExamSyllabusUpdateListener(),
+        'handle'
+    ]
+);
+
+K::addListener(
+    CourseExamSyllabusChangeEvent::NAME, [
+        new \App\Listener\CourseExamSyllabusChangeListener(),
         'handle'
     ]
 );

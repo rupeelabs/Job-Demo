@@ -182,7 +182,7 @@ class ComposerStaticInit62856ff3c8e2cbbd728781feba34d41b
         ),
         'Gaodun\\Event\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/../../Event/src',
+            0 => __DIR__ . '/..' . '/gaodun/event/src',
         ),
         'Gaodun\\' => 
         array (

@@ -3,15 +3,16 @@
         "fatrellis/mqk": "dev-master",
         "php/logging": "*",
         "php\/http-foundation": "*",
-        "catfan/Medoo": "^1.4"
+        "catfan/Medoo": "^1.4",
+        "gaodun/event": "dev-master"
     },
     "autoload": {
         "psr-4": {
             "DomainEvent\\": "src/DomainEvent/",
-            "Gaodun\\Event\\": "../../Event/src",
             "App\\": "./App"
         }
     },
+    "minimum-stability": "dev",
     "repositories": [
         {
             "type": "git",
@@ -48,6 +49,10 @@
         {
             "type": "git",
             "url": "ssh:\/\/git@gitlab.gaodun.com:22122\/weicongju\/mqk.git"
+        },
+        {
+            "type": "git",
+            "url": "ssh://git@gitlab.gaodun.com:22122/php/domain-event.git"
         }
     ]
 }

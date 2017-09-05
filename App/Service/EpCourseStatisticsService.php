@@ -28,7 +28,7 @@ class EpCourseStatisticsService
         echo 'Hello World';
     }
 
-    public function decreaseKnowledgeNums()
+    public function decreaseKnowledgeNums($id)
     {
         $courses = $this->courseDAO->findCoursesByExamSyllabusId($id);
         foreach ($courses as $course) {
@@ -36,11 +36,24 @@ class EpCourseStatisticsService
         }
     }
 
-    public function increaseKnowledgeNums()
+    public function increaseKnowledgeNums($id)
     {
         $courses = $this->courseDAO->findCoursesByExamSyllabusId($id);
         foreach ($courses as $course) {
             $this->epCourseStatisticsDAO->increaseKnowledgeNumsByCourseId($course['id']);
         }
+    }
+
+    public function updateKnowledgeNumsByCourseId($courseId, $knowledgeNums)
+    {
+        if ($this->epCourseStatisticsDAO->findOneByCourseId($courseId)) {
+            $result = $this->epCourseStatisticsDAO
+                ->updateKnowledgeNumsByCourseId($courseId, $knowledgeNums);
+        } else {
+            $result = $this->epCourseStatisticsDAO
+                ->insert($courseId, $knowledgeNums);
+        }
+
+        return $result;
     }
 }

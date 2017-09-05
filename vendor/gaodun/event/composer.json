@@ -1,0 +1,16 @@
+{
+    "name": "gaodun/event",
+    "description": "Domain Event",
+    "authors": [
+        {
+            "name": "Eric.Wang",
+            "email": "eric.wang@gaodun.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Gaodun\\Event\\": "src/"
+        }
+    }
+}

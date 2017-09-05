@@ -30,7 +30,7 @@ return array(
     'GuzzleHttp\\Promise\\' => array($vendorDir . '/guzzlehttp/promises/src'),
     'GuzzleHttp\\' => array($vendorDir . '/guzzlehttp/guzzle/src'),
     'Gelf\\' => array($vendorDir . '/graylog2/gelf-php/src/Gelf'),
-    'Gaodun\\Event\\' => array($baseDir . '/../../Event/src'),
+    'Gaodun\\Event\\' => array($vendorDir . '/gaodun/event/src'),
     'Gaodun\\' => array($vendorDir . '/gaodun/envdetect/src/Gaodun', $vendorDir . '/gaodun/envdetect/test/Gaodun'),
     'DomainEvent\\' => array($baseDir . '/src/DomainEvent'),
     'Conf\\' => array($vendorDir . '/php/conf/src/Conf', $vendorDir . '/php/conf/test/Conf'),
