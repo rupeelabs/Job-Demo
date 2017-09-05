@@ -1,0 +1,22 @@
+{
+    "name": "php/logging",
+    "require": {
+        "monolog/monolog": "^1",
+        "graylog2/gelf-php": "^1.5",
+        "php/conf": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Logging\\": "src/Logging/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7"
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "ssh://git@gitlab.gaodun.com:22122/php/conf.git"
+        }
+    ]
+}

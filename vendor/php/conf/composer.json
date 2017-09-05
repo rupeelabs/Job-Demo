@@ -1,0 +1,28 @@
+{
+    "name": "php/conf",
+    "require": {
+        "php/illuminate-config-php": "*",
+        "gaodun/consul-php-sdk": "1.0.11"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Conf\\": ["src/Conf", "test/Conf"]
+        }
+    },
+    "config": {
+        "secure-http": false
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "ssh://git@gitlab.gaodun.com:22122/php/illuminate-config-php.git"
+        },
+        {
+            "type": "composer",
+            "url": "http://packages.gaodunwangxiao.com/"
+        }
+    ]
+}
